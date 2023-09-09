@@ -1,0 +1,54 @@
+
+class juego
+class MapaOTablero
+class mina
+class bandera
+class camuflaje
+class numero
+class ContadorDeMinas
+class sospecha
+class reiniciar
+class dificultad
+class Menu
+class 1
+class 2
+class 3
+class 4
+class 5
+class 6
+class 7
+class 8
+class explosion
+class cronometro 
+
+class perder 
+class ganar 
+
+
+juego "1" *-- "1" Menu
+Menu "1" o-- "3" dificultad
+dificultad "1" --|> "1" MapaOTablero
+juego "1" o-- "1" MapaOTablero
+MapaOTablero"1" *-- "*" mina
+MapaOTablero "1" o-- "1" ContadorDeMinas
+ContadorDeMinas "1" *-- "1" dificultad
+MapaOTablero "1" *-- "*" numero
+MapaOTablero "1" o-- "1" reiniciar
+MapaOTablero "1" *-- "*" camuflaje
+MapaOTablero "1" *-- "1" cronometro
+mina "1" *-- "1" camuflaje
+mina "1" --|> "1" bandera
+mina "1" o-- "0,1" sospecha
+mina "1" o-- "1..8" numero
+mina "1" *-- "*" explosion
+camuflaje "1" --|> "1" bandera
+camuflaje "1" --|> "1" sospecha
+1 "1" --|> "1" numero
+2 "1" --|> "1" numero
+3 "1" --|> "1" numero
+4 "1" --|> "1" numero
+5 "1" --|> "1" numero
+6 "1" --|> "1" numero
+7 "1" --|> "1" numero
+8 "1" --|> "1" numero
+
